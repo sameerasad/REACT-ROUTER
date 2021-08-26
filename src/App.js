@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Menu}from './Menu';
+import {Route ,Switch} from "react-router-dom"
+import Home from './Home';
+import Blogs from './Blogs';
+import AboutUS from './AboutUs';
+
+import Add from './Calc';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Menu firstHeading="Home" secondHeading="blogs" thirdHeading="contact us" />
+    <Switch>
+    <Route path="/Home" component={Home} />
+    <Route path ="/Blogs"  component={Blogs}/>
+    <Route path ="/AboutUs" component ={AboutUS} />
+  </ Switch>
+ <h1>SUM : {Add(2,3)}</h1>
+    </>
   );
 }
 
