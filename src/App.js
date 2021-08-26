@@ -15,7 +15,7 @@ function App() {
     <Menu firstHeading="Home" secondHeading="blogs" thirdHeading="contact us" />
     <Switch>
     <Route path="/Home" component={Home} />
-    <Route path ="/Blogs"  component={Blogs}/>
+    <Route path ="/Blogs"  component={(props)=><Blogs sortBy="newest" {...props} />}/>
     <Route path ="/AboutUs" component ={AboutUS} />
   </ Switch>
  <h1>SUM : {Add(2,3)}</h1>
